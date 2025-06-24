@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+- Delete -
+{% endblock %}
+
+{% block contents %}
+<div class="delete whiteBg">
+  <h1>タスク削除確認</h1>
+  <p>本当に「{{ form.title.value }}」を削除しますか？</p>  
+  <form action="" method="POST">
+    {% csrf_token %}
+    <button type="submit">削除</button>
+  </form>
+</div>
+<a href="{% url 'index' %}">一覧へ戻る</a>
+{% endblock %}
